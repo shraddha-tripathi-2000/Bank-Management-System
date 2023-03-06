@@ -1,0 +1,11 @@
+.full-width{
+    width:100%;
+}
+
+.example-spacer{
+    flex:1 1 auto;
+
+}
+.body{
+    background-color:  rgb(149, 149, 219);
+}

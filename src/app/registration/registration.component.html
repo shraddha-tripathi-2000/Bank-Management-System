@@ -1,0 +1,176 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="bootstrap-wrapper body">
+    <div class="conatiner">
+  
+        <div class="row">
+  
+            <div class="col-md-6 offset-md-3 ">
+  
+                <div class="container text-center">
+                    <img class="img-fluid mt " style="width: 100px "src="/assets/register.png" alt="">
+                </div>
+            
+                <h1 class="text-center">Register Here !!</h1>
+  
+                <form #loginform="ngForm" (ngSubmit)="registerCustomer()">
+                  <small class="text-danger">{{msg}}</small>
+
+                  <mat-form-field class="full-width">
+                    <mat-label>Username</mat-label>
+                    <input
+                    [(ngModel)]="customer.username"
+                    name="username" placeholder="Enter Username"
+                    type="text" matInput required  #uname="ngModel"
+                    [class.is-ivalid]="uname.invalid &&uname.touched">
+                  </mat-form-field><br>
+                  <small class="text-danger" [class.d-none]="uname.valid|| uname.untouched">Username is required field</small><br>
+
+  
+                    <mat-form-field class="full-width">
+                        <mat-label>Customer Name</mat-label>
+                        <input
+                        [(ngModel)]="customer.customerName"
+                        name="customerName" placeholder="Enter your Name"
+                        type="text" matInput required  #name="ngModel"
+                        [class.is-ivalid]="name.invalid &&name.touched">
+                      </mat-form-field><br>
+                      <small class="text-danger" [class.d-none]="name.valid|| name.untouched">Name is required field</small><br>
+
+                      <mat-form-field class="full-width">
+                        <mat-label>Customers's Account Number</mat-label>
+                        <input
+                        [(ngModel)]="customer.accountNo"
+                        name="accountNo" placeholder="Enter your Account Number"
+                        type="text" matInput required  #accountNo="ngModel"
+                        [class.is-ivalid]="accountNo.invalid &&accountNo.touched" pattern="^\d{10}$">
+                      
+                      </mat-form-field>
+                      <!-- <small class="text-danger" [class.d-none]="accountNo.valid|| accountNo.untouched">Account Number is required field</small> -->
+                      <div *ngIf="accountNo.errors &&(accountNo.invalid && accountNo.touched)">
+                          <small class="text-danger" *ngIf="accountNo.errors['required']">Account Number is Required field</small>
+                          <small class="text-danger" *ngIf="accountNo.errors['pattern']">Account Number should be of valid format</small>
+                          </div>
+
+                      <mat-form-field class="full-width">
+                        <mat-label>E-mail Address</mat-label>
+                        <input
+                        [(ngModel)]="customer.email"
+                        name="username" placeholder="Enter your E-mail Id"
+                        type="text" matInput required #email="ngModel"
+                        [class.is-ivalid]="email.invalid &&email.touched" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+                        
+                      </mat-form-field><br>
+                      
+                      <div *ngIf="email.errors &&(email.invalid && email.touched)">
+                          <small class="text-danger" *ngIf="email.errors['required']">Email is Required field</small><br>
+                          <small class="text-danger" *ngIf="email.errors['pattern']">Email should be of valid format</small><br>
+                          </div>
+
+                          <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input 
+                            [(ngModel)]="customer.password"
+                            name="password" placeholder="Enter your password"
+                            type="password" matInput required #password="ngModel"
+                            [class.is-ivalid]="password.invalid &&password.touched">
+                           
+                        </mat-form-field><br>
+                        <small class="text-danger" [class.d-none]="password.valid|| password.untouched">Password is required field</small><br>
+
+                        <mat-form-field class="full-width">
+                            <mat-label>Confirm Password</mat-label>
+                            <input 
+                            (ngModel)="customer.password"
+                            name="cpassword" placeholder="Enter your password"
+                            type="text" matInput required #cpassword="ngModel"
+                            [class.is-ivalid]="cpassword.invalid &&cpassword.touched">
+                           
+                        </mat-form-field><br>
+                        <small class="text-danger" [class.d-none]="(cpassword.value ==password.value)|| cpassword.untouched">Password and Confirm Password must be same</small><br>
+                      
+                    <mat-form-field class="full-width">
+                        <mat-label>Customer's Address</mat-label>
+                        <input
+                        [(ngModel)]="customer.address"
+                        name="address" placeholder="Enter your Address"
+                        type="text" matInput required  #address="ngModel"
+                        [class.is-ivalid]="address.invalid &&address.touched">
+                      </mat-form-field><br>
+                      <small class="text-danger" [class.d-none]="address.valid|| address.untouched">Address is required field</small><br>
+                
+
+                      <mat-form-field class="full-width">
+                        <mat-label>Aadhar Number</mat-label>
+                        <input
+                        [(ngModel)]="customer.adharNo"
+                        name="adharNo" placeholder="Enter your 12 digit aadhar number"
+                        type="text" matInput required #adhar="ngModel"
+                        [class.is-ivalid]="adhar.invalid &&adhar.touched" pattern="^\d{12}$">
+                        
+                      </mat-form-field><br>
+                      
+                      <div *ngIf="adhar.errors &&(adhar.invalid && adhar.touched)">
+                          <small class="text-danger" *ngIf="adhar.errors['required']">Aadhar Number is Required field</small>
+                          <small class="text-danger" *ngIf="adhar.errors['pattern']">Aadhar Number should be of valid format</small><br>
+                          </div>
+
+                      <mat-form-field class="full-width">
+                        <mat-label>Pan Number</mat-label>
+                        <input
+                        [(ngModel)]="customer.panNo"
+                        name="panNo" placeholder="Enter your Pancard Number"
+                        type="text" matInput required #pan="ngModel"
+                        [class.is-ivalid]="pan.invalid &&pan.touched" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}">
+                        
+                      </mat-form-field><br>
+                      
+                      <div *ngIf="pan.errors &&(pan.invalid && pan.touched)">
+                          <small class="text-danger" *ngIf="pan.errors['required']">Pan Card Number is Required field</small><br>
+                          <small class="text-danger" *ngIf="pan.errors['pattern']">Pan Card Number should be of valid format</small><br>
+                          </div>
+                     
+                      <!-- <mat-form-field class="full-width">
+                        <mat-label>Gender</mat-label>
+                        <input
+                        [(ngModel)]="customer.gender"
+                        name="gender" placeholder="Enter your Gender"
+                        type="text" matInput required #gender="ngModel"
+                        [class.is-ivalid]="gender.invalid &&gender.touched">
+                      </mat-form-field><br>
+                      <small class="text-danger" [class.d-none]="gender.valid|| gender.untouched">Gender is required field</small><br> -->
+
+                      <mat-form-field appearance="fill">
+                        <mat-label>Gender</mat-label>
+                        <mat-select [(ngModel)]="customer.gender" name="gender" type="text"
+                        #gender="ngModel" required>
+                          <mat-option>Clear</mat-option>
+                          <mat-option value="Male">Male</mat-option>
+                          <mat-option value="Female">Female</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+  
+                      <mat-form-field class="full-width">
+                        <mat-label>Registered Contact Number</mat-label>
+                        <input
+                        [(ngModel)]="customer.contactNo"
+                        name="gender" placeholder="Enter your Conatct Number"
+                        type="text" matInput required #contact="ngModel"
+                        [class.is-ivalid]="contact.invalid &&contact.touched">
+                      </mat-form-field><br>
+                      <small class="text-danger" [class.d-none]="contact.valid|| contact.untouched">Contact Number is required field</small><br>
+        
+                    <div class="conatiner text-center">
+                        <button color="primary" type="submit" mat-raised-button>Register</button>
+                          
+                        
+                    </div>
+                  
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

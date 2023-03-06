@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 600px;
+    margin-bottom: 6px;
+  }
+
+  
+.display{
+  display: flex;
+}

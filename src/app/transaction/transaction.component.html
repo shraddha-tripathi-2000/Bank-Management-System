@@ -1,0 +1,92 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container-fluid mt ">
+      <div class="display">
+        <div class="col-md-6"> 
+
+             <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title>Deposition</mat-card-title>
+                  <img mat-card-sm-image src="/assets/deposit.png" >
+                </mat-card-title-group>
+                <mat-card-content>
+    
+                  <form  #loginform="ngForm" (ngSubmit)="deposit(service.getUser().accountNo,amount)" >
+                    <mat-form-field appearance="fill">
+                      <mat-label>Amount</mat-label>
+                      <input [(ngModel)]="amount" type="number" name="amount" id="amount" matInput  required>
+                    </mat-form-field>
+                    <!-- <h3>{{amount}}</h3> -->
+                    <div class="container text-center">
+                      <button color="primary" type="submit" mat-raised-button>Deposit</button>
+                    </div>
+                  </form>
+                </mat-card-content>
+              </mat-card>
+
+               <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title>Withdrawl</mat-card-title>
+                  <img mat-card-sm-image src="/assets/withdraw.png" >
+                </mat-card-title-group>
+                <mat-card-content>
+                    <form #loginform="ngForm" (ngSubmit)="withdraw(service.getUser().accountNo,amountw)" >
+                      <mat-form-field appearance="fill">
+                        <mat-label>Amount</mat-label>
+                        <input [(ngModel)]="amountw" type="number" name="amountw" id="amountw" matInput  required>
+                      </mat-form-field>
+                      <!-- <h3>{{amount}}</h3> -->
+                          <div class="container text-center">
+                            <button color="primary" type="submit" mat-raised-button>Withdraw</button>
+                        </div>
+                        </form>
+                </mat-card-content>
+              </mat-card>
+      
+        </div>
+    
+        <div class="col-md-6">
+            <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title>Transfer</mat-card-title>
+                  <mat-card-subtitle></mat-card-subtitle>
+                  <img mat-card-sm-image src="/assets/transfer.png" >
+                </mat-card-title-group>
+                <mat-card-content>
+                    <form #loginform="ngForm" (ngSubmit)="transfer(service.getUser().accountNo,destAccountNo,amountt)"  >
+                      <mat-form-field appearance="fill">
+                        <mat-label>To Account Number</mat-label>
+                        <input [(ngModel)]="destAccountNo" type="text" name="destAccountNo" id="destAccountNo" matInput required  pattern="^\d{10}$">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Amount</mat-label>
+                        <input [(ngModel)]="amountt" type="number" name="amountt" id="amountt" matInput  required>
+                      </mat-form-field>
+                      <!-- <h3>{{amount}}</h3> -->
+                          
+                          <div class="container text-center">
+                            <button color="primary" type="submit" mat-raised-button>Transfer</button>
+                        </div>
+                        </form>
+                </mat-card-content>
+              </mat-card>
+            
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    </div> 
+    <!-- <form  #loginform="ngForm" (ngSubmit)="deposit(service.getUser().accountNo,amount)" >
+      <mat-form-field appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input [(ngModel)]="amount" type="number" name="amount" id="amount" matInput  required>
+      </mat-form-field>
+      <h3>{{amount}}</h3>
+      <div class="conatiner text-center">
+        <button color="primary" type="submit" mat-raised-button>Deposit</button>
+      </div>
+    </form> -->
+   
+    <!-- <button (click)="trans(service.getUser().accountNo,destAccountNo,amountt)" color="primary" type="submit" mat-raised-button>Transfer</button> -->

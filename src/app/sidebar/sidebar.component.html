@@ -1,0 +1,17 @@
+<mat-card class="body">
+    <mat-action-list>
+
+        <div mat-subheader class="text-center">   <button mat-list-item><mat-icon mat-list-icon>menu</mat-icon></button> </div>
+       
+            <button routerLink="/dashboard"mat-list-item><mat-icon mat-list-icon>home</mat-icon>Home</button>
+            
+            <button mat-list-item routerLink="/dashboard/profile"><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+
+            <button routerLink="/dashboard/accounts"mat-list-item><mat-icon mat-list-icon>account_balance</mat-icon>Accounts</button>
+            <button routerLink="/dashboard/transaction"mat-list-item><mat-icon mat-list-icon>currency_exchange</mat-icon>Transaction</button>
+            <button routerLink="/dashboard/privacy"mat-list-item><mat-icon mat-list-icon>privacy_tips</mat-icon>Privacy Tips</button>
+            <button routerLink="/dashboard/contact"mat-list-item><mat-icon mat-list-icon>contact_support</mat-icon>Contact Support</button>
+            <button (click)="login.logout()" mat-list-item><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+    
+    </mat-action-list>
+</mat-card>

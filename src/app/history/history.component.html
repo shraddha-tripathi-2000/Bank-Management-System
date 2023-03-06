@@ -1,0 +1,19 @@
+<h2>Transaction Details</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Final Balance</th>
+            <th>Initial Balance</th>
+            <th>Transaction Type</th>
+            <th>Transaction Status</th>
+        </tr>      
+    </thead>
+    <tbody>
+        <tr *ngFor = "let log of logs | orderBy:'order':true; let iLine = index">
+            <td>{{log.finalBal}}</td>
+            <td>{{log.initBal}}</td> 
+          <td>{{log.transacType}}</td> 
+           <td>{{log.transacStatus}}</td>
+        </tr>
+    </tbody>
+</table>

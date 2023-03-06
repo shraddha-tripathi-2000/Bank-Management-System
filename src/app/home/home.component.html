@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<body>
+
+<div class="main-div">
+   <mat-card class="example-card">
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-title ><h1 style="font-size:200%;  color:aliceblue;font-weight:bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif " class="text-center">Banking Solutions</h1></mat-card-title>
+        <mat-card-content>
+        <div class="text-center">   
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0IUuyMt4zr3OkxgJGXH_2stEJlytfkckZXw&usqp=CAU" alt="" class="mt30"><br>
+          <!-- <pre style="font-size:120%;font-family:Arial, Helvetica, sans-serif;">
+        As a banking customer,it is your right 
+        to get fair treatment from your financial
+        institution.The bank cannot discriminate
+        against you on grounds such as sex,age,
+        religion, caste, sexual orientation, and 
+        physical ability.
+        </pre> -->
+        <button class="mt30"routerLink="/contact"mat-list-item><mat-icon mat-list-icon>contacts</mat-icon>Contact</button>
+            <button routerLink="/guide"mat-list-item><mat-icon mat-list-icon>help</mat-icon>Help</button>
+            <button routerLink="/privacy"mat-list-item><mat-icon mat-list-icon>privacy_tips</mat-icon>Privacy Tips</button><br>
+    </div> 
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+            <div class="bootstrap-wrapper">
+                <div class="container text-center ">
+                    <button style="margin-left: 10px ;"color="accent" type="submit" mat-raised-button routerLink="/login">Login</button>
+                    <button style="margin-left: 10px ;"color="accent" type="submit" mat-raised-button routerLink="/registration">Register</button>
+                </div>
+            </div>
+        </mat-card-actions>
+      </mat-card> 
+<!-- <div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <h1 style="font-family: Arial, Helvetica, sans-serif;" class="text-center">Welcome to Banking App</h1>
+        <button style="margin-left: 10px ;"color="accent" type="submit" mat-raised-button routerLink="/login">Login</button>
+        <button style="margin-left: 10px ;"color="accent" type="submit" mat-raised-button routerLink="/registration">Register</button>
+    </div>
+</div> -->
+</div>
+</body>
+

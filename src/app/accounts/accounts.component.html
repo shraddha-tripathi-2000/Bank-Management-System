@@ -1,0 +1,20 @@
+<mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-icon>account_balance_wallet</mat-icon>     
+             Saving Account   
+            </mat-panel-title>
+            <mat-panel-description>
+             <button color="primary" mat-button (click)="getBalance(login.getUser().accountNo)" mat-raised-button>Balance</button>
+    
+            </mat-panel-description>
+
+        </mat-expansion-panel-header>
+            <button mat-button routerLink="/dashboard/accounts/history">Transaction History</button>
+            <!-- <button mat-button (click)="log(login.getUser().accountNo)">Transaction History</button> -->
+             <router-outlet></router-outlet>
+             
+    </mat-expansion-panel>
+
+</mat-accordion>

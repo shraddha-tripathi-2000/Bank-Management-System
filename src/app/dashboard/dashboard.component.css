@@ -1,0 +1,35 @@
+.navbar-custom {
+    background-color: #3f51b5;
+}
+.example-spacer{
+    flex:1 1 auto;
+
+}
+.body{
+    background-color:  rgb(162, 162, 225);
+}
+.navbar-nav {
+    margin-left: auto;
+}
+
+.heading{
+    color:black;
+    font-size: 35px;
+    text-align: center;
+}
+.sec{
+    width:25%;
+    float: left;
+    text-align:center;
+    padding:0px 50 px;
+}
+
+.align{
+    margin-top: 150px;
+}
+
+
+.example-spacer{
+    flex:2 2 auto;
+
+}

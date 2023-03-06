@@ -1,0 +1,62 @@
+<mat-card>
+    <h3 style="font-weight: bold;" class="text-center">Your Profile Details</h3>
+    <mat-card-content>
+        <div class="bootstrapwarapper" id="content" #content>
+            <div class="container text-center" >
+                <div class="container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrb7XeVpElaj3yF0M2zBadpBwR1H32HQQumw&usqp=CAU" alt="" class="profile-image">
+                    <h1 class="mt">{{user.username}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center" id="content">
+                            <tr>
+                                <td>Customer Name</td>
+                                <td>{{user.customerName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>{{user.gender}}</td>
+                            </tr>
+                            <tr>
+                                <td>Account Number</td>
+                                <td>{{user.accountNo}}</td>
+                            </tr>
+                            <tr>
+                                <td>E-mail Id</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Permanent Address</td>
+                                <td>{{user.address}}</td>
+                            </tr>
+                            <tr>
+                                <td>Aadhar Card Number</td>
+                                <td>{{user.adharNo}}</td>
+                            </tr>
+                            <tr>
+                                <td>Pan Card Number</td>
+                                <td>{{user.panNo}}</td>
+                            </tr>
+                            <tr>
+                                <td>Contact Number</td>
+                                <td>{{user.contactNo}}</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Account Status</td>
+                                <td>{{user.enabled?"ACTIVE":"NON-ACTIVE"}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button (click)="updateProfile(login.getUser().accountNo)" mat-raised-button color="primary">UPDATE</button>
+        <button  mat-raised-button color="accent" value="Download PDF">Export</button>
+      </mat-card-actions>
+</mat-card>

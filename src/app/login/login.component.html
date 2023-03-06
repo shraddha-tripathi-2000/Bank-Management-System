@@ -1,0 +1,70 @@
+
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/">
+      <mat-icon>paid</mat-icon>
+    </button>
+    <span>My Bank</span>
+</mat-toolbar>
+
+
+
+
+<div class="bootstrap-wrapper body full-width">
+  <div class="conatiner">
+
+      <div class="row">
+
+          <div class="col-md-6 offset-md-3 ">
+
+              <div class="container text-center">
+                  <img class="img-fluid mt " style="width: 50px"src="/assets/password.png" alt="">
+              </div>
+          
+              <h1 class="text-center">Login Here !!</h1>
+          
+
+              <form #loginform="ngForm" (ngSubmit)="loginCustomer()">
+                <small class="text-danger">{{msg}}</small>
+
+                  <mat-form-field class="full-width">
+                      <mat-label>Username(Username nmust be unique)</mat-label>
+                      <input
+                      [(ngModel)]="customer.username"
+                      name="username" placeholder="Enter your Username"
+                      type="text" matInput required #uname="ngModel"
+                      [class.is-ivalid]="uname.invalid &&uname.touched" >
+                      
+                    </mat-form-field>
+                    <small class="text-danger" [class.d-none]="uname.valid|| uname.untouched">Username is required field</small>
+                    <!-- <div *ngIf="uname.errors &&(uname.invalid && uname.touched)">
+                        <small class="text-danger" *ngIf="uname.errors['required']">Username is Required field</small>
+                        <small class="text-danger" *ngIf="uname.errors['pattern']">Username should be of valid format</small>
+                        </div> -->
+        
+                  <mat-form-field class="full-width">
+                      <mat-label>Password</mat-label>
+                      <input 
+                      [(ngModel)]="customer.password"
+                      name="password" placeholder="Enter your password"
+                      type="password" matInput required #password="ngModel"
+                      [class.is-ivalid]="password.invalid &&password.touched">
+                     
+                  </mat-form-field>
+                  <small class="text-danger" [class.d-none]="password.valid|| password.untouched">Password is required field</small>
+                  
+            
+
+                  <div class="conatiner text-center">
+                      <button color="primary" type="submit" mat-raised-button>Login</button>
+                        
+                      <!-- <button style="margin-left: 10px ;"color="accent" type="submit" mat-raised-button (click)="gotoregistration()">Register</button> -->
+                      <!-- <button style="margin-left: 10px ;"color="accent" type="submit" mat-raised-button routerLink="/registration">Register</button> -->
+                      <small class="float-right" routerLink="/registration">New User ? Register Here</small>
+                  </div>
+                  <br>
+                  <!-- <p class="mt">{{customer | json}}</p> -->
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
